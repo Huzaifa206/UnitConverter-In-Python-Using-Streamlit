@@ -73,9 +73,10 @@ value = st.number_input("Enter value", value=0.0, step=1.0)
 
 if st.button("Convert", use_container_width=True):
     result = convert_units(value, from_unit, to_unit)
-    st.markdown("""
-        <h2 style='text-align: center; font-size: 28px;'>✅ {value} {from_unit} is equal to {result:.4f} {to_unit}</h2>
-    """, unsafe_allow_html=True)
+    st.markdown(f"""
+    <p style='text-align: center; font-size: 24px; color: green;'>✅ {value} {from_unit} is equal to {result:.4f} {to_unit}</p>
+""", unsafe_allow_html=True)
+
 
 st.markdown("<h4 style=''>", unsafe_allow_html=True)
 st.markdown("""
