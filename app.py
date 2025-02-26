@@ -2,6 +2,26 @@ import streamlit as st # type: ignore
 
 st.set_page_config(page_title="Unit Converter", page_icon="🔄", layout="centered")
 
+# Custom CSS for background color
+st.markdown("""
+    <style>
+        .stApp {
+            background-color: #F1E3D3;
+        }
+             div.stButton > button {
+            background-color: #1B4D3E;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        div.stButton > button:hover {
+            background-color: #2f876d;
+            color: white;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 def convert_units(value, from_unit, to_unit):
     conversion_factors = {
         "meters": 1,
@@ -53,11 +73,11 @@ value = st.number_input("Enter value", value=0.0, step=1.0)
 
 if st.button("Convert", use_container_width=True):
     result = convert_units(value, from_unit, to_unit)
-    st.markdown(f"""
-        <h2 style='text-align: center; font-size: 28px; color: green;'>✅ {value} {from_unit} is equal to {result:.4f} {to_unit}</h2>
+    st.markdown("""
+        <h2 style='text-align: center; font-size: 28px;'>✅ {value} {from_unit} is equal to {result:.4f} {to_unit}</h2>
     """, unsafe_allow_html=True)
 
-st.markdown("<hr style='border: 1px solid #ddd;'>", unsafe_allow_html=True)
+st.markdown("<h4 style=''>", unsafe_allow_html=True)
 st.markdown("""
     <p style='text-align: center; font-size: 16px;'>Built with ❤️ using Streamlit</p>
 """, unsafe_allow_html=True)
