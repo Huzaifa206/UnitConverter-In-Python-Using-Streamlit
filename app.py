@@ -9,7 +9,7 @@ st.markdown("""
             background-color: #F1E3D3;
         }
              div.stButton > button {
-            background-color: #1B4D3E;
+            background-color: #1B4D3E !important;
             color: white;
             border-radius: 8px;
             padding: 10px 20px;
