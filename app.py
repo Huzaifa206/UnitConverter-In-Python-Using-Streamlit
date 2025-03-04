@@ -6,7 +6,7 @@ st.set_page_config(page_title="Unit Converter", page_icon="🔄", layout="center
 st.markdown("""
     <style>
         .stApp {
-            background-color: #F1E3D3;
+            background-color: #C9EDDC;
         }
              div.stButton > button {
             background-color: #1B4D3E !important;
@@ -61,7 +61,14 @@ st.markdown("""
     <h3 style='text-align: center; font-size: 24px;'>Convert between different units easily!</h3>
 """, unsafe_allow_html=True)
 
-all_units = ["meters", "kilometers", "centimeters", "millimeters", "miles", "yards", "feet", "inches", "kilograms", "grams", "milligrams", "metric tons", "pounds", "ounces", "stones", "celsius", "fahrenheit", "kelvin"]
+unit_categories = {
+    "Length": ["meters", "kilometers", "centimeters", "millimeters", "miles", "yards", "feet", "inches"],
+    "Weight": ["kilograms", "grams", "milligrams", "metric tons", "pounds", "ounces", "stones"],
+    "Temperature": ["celsius", "fahrenheit", "kelvin"]
+}
+
+unit_type = st.selectbox("Select Unit Type", list(unit_categories.keys()))
+all_units = unit_categories[unit_type]
 
 col1, col2 = st.columns(2)
 with col1:
